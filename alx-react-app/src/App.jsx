@@ -17,7 +17,11 @@ function App() {
         <Header />
         <MainContent />
         <Footer />
-        <UserProfile />
+        <UserProfile
+            name="Kaven"
+            age={22}
+            bio="oizfhoifziujhfoiezjh"
+        />
       <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
