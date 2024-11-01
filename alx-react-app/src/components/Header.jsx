@@ -1,4 +1,4 @@
-function Header() {
+function header() {
     return (
         <header>
             <h1>My Favorite Cities</h1>
@@ -6,4 +6,4 @@ function Header() {
     );
 }
 
-export Header;
+export header;
