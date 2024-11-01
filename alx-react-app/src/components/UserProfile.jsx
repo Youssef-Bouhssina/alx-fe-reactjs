@@ -7,3 +7,5 @@ function UserProfile(props) {
         </div>
     )
 }
+
+export default UserProfile;
