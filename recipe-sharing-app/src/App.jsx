@@ -1,4 +1,5 @@
 import './App.css'
+import RecipeStore from `./RecipeStore`
 import RecipeList from `./components/RecipeList.jsx`
 import AddRecipeForm from `./components/AddRecipeForm.jsx`
 
@@ -11,6 +12,7 @@ function App() {
                   <h1 className="text-2xl mb-6">Recipe Sharing App</h1>
                   <RecipeList />
                   <AddRecipeForm/>
+                  <RecipeStore/>
               </div>
           </div>
       </>
