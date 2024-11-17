@@ -1,5 +1,5 @@
 import './App.css'
-import useRecipeStore from `./recipeStore.js`
+import { useRecipeStore } from `./recipeStore.js`
 import RecipeList from `./components/RecipeList.jsx`
 import AddRecipeForm from `./components/AddRecipeForm.jsx`
 
