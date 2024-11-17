@@ -26,15 +26,17 @@ const useRecipeStore = create((set) => ({
             ),
         })),
 
-        searchTerm: '',
-        setSearchTerm: (term) => set({ searchTerm: term }),
-        filteredRecipes: [],
-        filterRecipes: () => set(state => ({
-            filteredRecipes: state.recipes.filter(recipe =>
-                recipe.title.toLowerCase().includes(state.searchTerm.toLowerCase())
-            ))
-    })),
-    }));
+    // Search term state and action
+    searchTerm: '',
+    setSearchTerm: (term) => set({ searchTerm: term }),
+
+    // Computed state for filtered recipes
+    getFilteredRecipes: () => {
+        const state = useRecipeStore.getState(); // Access current state
+        return state.recipes.filter((recipe) =>
+            recipe.title.toLowerCase().includes(state.searchTerm.toLowerCase())
+        );
+    },
 }));
 
 export default useRecipeStore;
