@@ -1,28 +1,21 @@
-// RecipeList component
-import { useRecipeStore } from './recipeStore.js';
+import { useRecipeStore } from '../recipeStore.js';
 
 const RecipeList = () => {
-    // Fetch filtered recipes and search term from the store
-    const getFilteredRecipes = useRecipeStore((state) => state.getFilteredRecipes);
-    const searchTerm = useRecipeStore((state) => state.searchTerm);
-
-    const filteredRecipes = getFilteredRecipes();
+    // Get the filtered recipes from the Zustand store
+    const filteredRecipes = useRecipeStore((state) => state.filteredRecipes);
 
     return (
         <div>
+            {/* Check if there are any filtered recipes */}
             {filteredRecipes.length > 0 ? (
                 filteredRecipes.map((recipe) => (
-                    <div key={recipe.id} className="mb-4 border p-4 rounded-md shadow-sm">
-                        <h3 className="text-xl font-bold">{recipe.title}</h3>
-                        <p className="text-gray-700">{recipe.description}</p>
+                    <div key={recipe.id} className="mb-4">
+                        <h3 className="font-semibold">{recipe.title}</h3>
+                        <p>{recipe.description}</p>
                     </div>
                 ))
             ) : (
-                <p className="text-gray-500">
-                    {searchTerm
-                        ? `No recipes found for "${searchTerm}".`
-                        : "No recipes available. Add some to get started!"}
-                </p>
+                <p>No recipes found.</p>
             )}
         </div>
     );
