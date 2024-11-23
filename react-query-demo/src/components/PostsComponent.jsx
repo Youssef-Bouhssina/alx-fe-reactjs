@@ -7,10 +7,10 @@ function PostsComponent() {
         );
     };
 
-    const { isLoading, error, data, isFetching, refetch } = useQuery('posts', fetchPosts);
+    const { isLoading, isError, error, data, isFetching, refetch } = useQuery('posts', fetchPosts);
 
     if (isLoading) return <div>Loading...</div>;
-    if (error) return <div>Error: {error.message}</div>;
+    if (isError) return <div>Error: {error.message}</div>;
 
     return (
         <div>
@@ -28,4 +28,4 @@ function PostsComponent() {
     );
 }
 
-export default PostsComponent;
+export default PostsComponent
