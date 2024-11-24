@@ -21,6 +21,8 @@ react-router-advanced/
 │   │   ├── ProfileSettings.jsx
 │   │   ├── BlogPost.jsx
 │   │   └── ProtectedRoute.jsx
+│   ├── Hooks/
+│   │   ├── useAuth.js
 │   ├── App.jsx
 │   └── main.jsx
 ├── index.html
