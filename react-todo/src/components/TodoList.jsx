@@ -1,56 +1,46 @@
-import { useState } from 'react';
-import AddTodoForm from './AddTodoForm';
+import React, { useState } from "react";  // Add the React import here
+import AddTodoForm from "./AddTodoForm";
 
 function TodoList() {
     const [todos, setTodos] = useState([
-        { id: 1, text: 'Learn React', completed: false },
-        { id: 2, text: 'Build Todo App', completed: true },
-        { id: 3, text: 'Write Tests', completed: false },
+        { id: 1, title: "Do the dishes", completed: false },
+        { id: 2, title: "Take out the trash", completed: false }
     ]);
 
-    const addTodo = (text) => {
-        setTodos([
-            ...todos,
-            { id: todos.length + 1, text, completed: false }
-        ]);
-    };
-
-    const toggleTodo = (id) => {
-        setTodos(todos.map(todo =>
-            todo.id === id ? { ...todo, completed: !todo.completed } : todo
-        ));
+    const toggleCompletion = (id) => {
+        setTodos((prev) =>
+            prev.map((todo) => {
+                return todo.id === id ? { ...todo, completed: !todo.completed } : todo;
+            })
+        );
     };
 
     const deleteTodo = (id) => {
-        setTodos(todos.filter(todo => todo.id !== id));
+        setTodos((prev) => [...prev.filter((todo) => todo.id !== id)]);
     };
 
     return (
         <div>
-            <h1>Todo List</h1>
-            <AddTodoForm onAdd={addTodo} />
-            <ul>
-                {todos.map(todo => (
-                    <li key={todo.id}>
-                        <span
-                            onClick={() => toggleTodo(todo.id)}
-                            style={{
-                                textDecoration: todo.completed ? 'line-through' : 'none',
-                                cursor: 'pointer'
-                            }}
-                            data-testid={`todo-item-${todo.id}`}
+            <AddTodoForm setTodos={setTodos} />
+            <h1>My todos:</h1>
+            {todos.map((todo) => {
+                const { id, title, completed } = todo;
+                return (
+                    <div style={{ display: "flex", gap: ".4rem" }} key={id}>
+                        <label
+                            style={{ textDecoration: `${completed ? "line-through" : "none"}` }}
                         >
-                            {todo.text}
-                        </span>
-                        <button
-                            onClick={() => deleteTodo(todo.id)}
-                            data-testid={`delete-button-${todo.id}`}
-                        >
-                            Delete
-                        </button>
-                    </li>
-                ))}
-            </ul>
+                            <input
+                                type="checkbox"
+                                onChange={() => toggleCompletion(id)}
+                                checked={completed}
+                            />
+                            {title}
+                        </label>
+                        <button onClick={() => deleteTodo(id)}>Delete</button>
+                    </div>
+                );
+            })}
         </div>
     );
 }
