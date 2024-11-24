@@ -1,5 +1,5 @@
 import { Navigate } from 'react-router-dom';
-import { useAuth } from '../hooks/useAuth'; // Adjust the path based on your project structure
+import { useAuth } from '../hooks/useAuth';
 
 const ProtectedRoute = ({ children }) => {
     const isAuthenticated = useAuth(); // Use the custom hook
