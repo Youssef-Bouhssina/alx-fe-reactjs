@@ -5,7 +5,7 @@ This project demonstrates advanced routing techniques in a React application usi
 ## Features
 
 - Nested routes for Profile management
-- Protected routes requiring authentication
+- Protected routes requiring authentication  
 - Dynamic routing for blog posts
 - Basic authentication simulation
 
@@ -14,17 +14,17 @@ This project demonstrates advanced routing techniques in a React application usi
 react-router-advanced/
 ├── src/
 │   ├── components/
-│   │   └── ProtectedRoute.jsx
-│   ├── pages/
 │   │   ├── Home.jsx
 │   │   ├── Login.jsx
 │   │   ├── Profile.jsx
 │   │   ├── ProfileDetails.jsx
 │   │   ├── ProfileSettings.jsx
-│   │   └── BlogPost.jsx
+│   │   ├── BlogPost.jsx
+│   │   └── ProtectedRoute.jsx
 │   ├── App.jsx
 │   └── main.jsx
 ├── index.html
+├── README.md
 ├── package.json
 └── vite.config.js
 ```
@@ -75,3 +75,5 @@ After starting the development server, you can:
 
 This project uses a simple localStorage-based authentication simulation. In a production environment, you would want to implement proper authentication.
 ```
+
+All React components are now organized in a single components folder for better maintainability and easier imports.
