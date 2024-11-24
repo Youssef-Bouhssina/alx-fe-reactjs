@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Home from './pages/Home';
+import Home from './components/Home.jsx';
 import Profile from './components/Profile.jsx';
-import ProfileDetails from './pages/ProfileDetails';
-import ProfileSettings from './pages/ProfileSettings';
-import BlogPost from './pages/BlogPost';
-import Login from './pages/Login';
+import ProfileDetails from './components/ProfileDetails.jsx';
+import ProfileSettings from './components/ProfileSettings.jsx';
+import BlogPost from './components/BlogPost.jsx';
+import Login from './components/Login.jsx';
 
 function App() {
     return (
