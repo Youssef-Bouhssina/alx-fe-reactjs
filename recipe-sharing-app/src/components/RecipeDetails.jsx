@@ -1,9 +1,9 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import {useParams} from 'react-router-dom';
 import useRecipeStore from '../store/recipeStore';
 
 const RecipeDetails = () => {
-    const { id } = useParams();
+    const {id} = useParams();
     const recipe = useRecipeStore((state) =>
         state.recipes.find((recipe) => recipe.id === parseInt(id))
     );

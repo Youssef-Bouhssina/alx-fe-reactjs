@@ -1,5 +1,6 @@
 React Query Integration for Data Fetching, Caching, and Updates
-This project demonstrates how to integrate React Query into a React application for efficient data fetching, caching, and updating. It utilizes the JSONPlaceholder API to showcase these functionalities.
+This project demonstrates how to integrate React Query into a React application for efficient data fetching, caching,
+and updating. It utilizes the JSONPlaceholder API to showcase these functionalities.
 
 Features:
 
@@ -21,8 +22,10 @@ Explanation:
 
 The project consists of two main components:
 
-App.js: Wraps the main application with QueryClientProvider to make the QueryClient available throughout the application.
-PostsComponent.jsx: Fetches posts from the JSONPlaceholder API using useQuery, handles loading states, errors, and renders the fetched data. Additionally, it implements a button to trigger a refetch of the data on demand.
+App.js: Wraps the main application with QueryClientProvider to make the QueryClient available throughout the
+application.
+PostsComponent.jsx: Fetches posts from the JSONPlaceholder API using useQuery, handles loading states, errors, and
+renders the fetched data. Additionally, it implements a button to trigger a refetch of the data on demand.
 Testing and Evaluation:
 
 Test the application to ensure data fetching, caching, and refetching work as expected.
@@ -34,4 +37,5 @@ JSONPlaceholder API: Used for fetching posts: https://jsonplaceholder.typicode.c
 Further Exploration:
 
 Explore additional features of React Query, such as mutations, optimistic updates, and custom caching strategies.
-This project provides a basic example of how React Query can simplify and optimize data fetching in your React applications. Feel free to extend it further based on your specific needs.
+This project provides a basic example of how React Query can simplify and optimize data fetching in your React
+applications. Feel free to extend it further based on your specific needs.

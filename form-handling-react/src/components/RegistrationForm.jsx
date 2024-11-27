@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 const RegistrationForm = () => {
     const [username, setUsername] = useState('');
@@ -26,7 +26,7 @@ const RegistrationForm = () => {
 
         if (Object.keys(newErrors).length === 0) {
             // Handle form submission here, e.g., send data to a server
-            console.log({ username, email, password });
+            console.log({username, email, password});
         }
     };
 

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Home from './components/Home.jsx';
 import Profile from './components/Profile.jsx';
 import ProfileDetails from './components/ProfileDetails.jsx';
@@ -10,17 +10,17 @@ function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login />} />
+                <Route path="/" element={<Home/>}/>
+                <Route path="/login" element={<Login/>}/>
                 <Route path="/profile/*" element={
                     <ProtectedRoute>
-                        <Profile />
+                        <Profile/>
                     </ProtectedRoute>
                 }>
-                    <Route path="details" element={<ProfileDetails />} />
-                    <Route path="settings" element={<ProfileSettings />} />
+                    <Route path="details" element={<ProfileDetails/>}/>
+                    <Route path="settings" element={<ProfileSettings/>}/>
                 </Route>
-                <Route path="/blog/:id" element={<BlogPost />} /> {/* Updated */}
+                <Route path="/blog/:id" element={<BlogPost/>}/> {/* Updated */}
             </Routes>
         </BrowserRouter>
     );

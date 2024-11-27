@@ -1,5 +1,5 @@
-import { useRecipeStore } from '../recipeStore.js';
-import { Link } from 'react-router-dom'; // Importing Link from react-router-dom
+import {useRecipeStore} from '../recipeStore.js';
+import {Link} from 'react-router-dom'; // Importing Link from react-router-dom
 
 const RecipeList = () => {
     // Get the filtered recipes from the Zustand store

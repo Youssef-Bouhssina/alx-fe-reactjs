@@ -1,4 +1,4 @@
-import { useQuery } from 'react-query';
+import {useQuery} from 'react-query';
 
 function PostsComponent() {
     const fetchPosts = () => {
@@ -7,7 +7,7 @@ function PostsComponent() {
         );
     };
 
-    const { isLoading, isError, error, data, isFetching, refetch } = useQuery('posts', fetchPosts, {
+    const {isLoading, isError, error, data, isFetching, refetch} = useQuery('posts', fetchPosts, {
         cacheTime: 5 * 60 * 1000, // 5 minutes in milliseconds
         staleTime: 30 * 1000, // 30 seconds in milliseconds
         refetchOnWindowFocus: false,

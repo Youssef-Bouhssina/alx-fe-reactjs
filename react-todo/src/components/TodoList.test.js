@@ -1,11 +1,11 @@
 import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
+import {fireEvent, render, screen} from '@testing-library/react';
 import '@testing-library/jest-dom';
 import TodoList from '../components/TodoList';
 import AddTodoForm from '../components/AddTodoForm';
 
 test('renders TodoList component', () => {
-    render(<TodoList />);
+    render(<TodoList/>);
     expect(screen.getByText(/My todos:/i)).toBeInTheDocument();
     expect(screen.getAllByText('Delete')[0]).toBeInTheDocument();
 });
@@ -13,12 +13,12 @@ test('renders TodoList component', () => {
 test('adds new todo', () => {
     const setTodos = jest.fn();
 
-    render(<AddTodoForm setTodos={setTodos} />);
+    render(<AddTodoForm setTodos={setTodos}/>);
 
     const input = screen.getByPlaceholderText('To do title');
     const button = screen.getByText('Add Todo');
 
-    fireEvent.change(input, { target: { value: 'New Todo' } });
+    fireEvent.change(input, {target: {value: 'New Todo'}});
 
     fireEvent.click(button);
 
@@ -36,7 +36,7 @@ test('adds new todo', () => {
 });
 
 test('toggles todo', () => {
-    render(<TodoList />);
+    render(<TodoList/>);
 
     const checkbox = screen.getByLabelText('Do the dishes');
 
@@ -48,7 +48,7 @@ test('toggles todo', () => {
 })
 
 test('deletes a todo item', () => {
-    render(<TodoList />);
+    render(<TodoList/>);
 
     const deleteButton = screen.getAllByText('Delete')[0];
 

@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import RecipeList from './components/RecipeList.jsx';
 import AddRecipeForm from './components/AddRecipeForm.jsx';
 import RecipeDetails from './components/RecipeDetails';
@@ -16,25 +16,25 @@ function App() {
                     <h1 className="text-2xl mb-6">Recipe Sharing App</h1>
 
                     {/* Search Bar */}
-                    <SearchBar />
+                    <SearchBar/>
 
                     {/* Main Routes */}
                     <Routes>
-                        <Route path="/recipes/:id" element={<RecipeDetails />} />
-                        <Route path="/recipes/:id/edit" element={<EditRecipeForm />} />
+                        <Route path="/recipes/:id" element={<RecipeDetails/>}/>
+                        <Route path="/recipes/:id/edit" element={<EditRecipeForm/>}/>
                     </Routes>
 
                     {/* Recipe List */}
-                    <RecipeList />
+                    <RecipeList/>
 
                     {/* Add Recipe Form */}
-                    <AddRecipeForm />
+                    <AddRecipeForm/>
 
                     {/* Favorites Section */}
-                    <FavoritesList />
+                    <FavoritesList/>
 
                     {/* Recommendations Section */}
-                    <RecommendationsList />
+                    <RecommendationsList/>
                 </div>
             </div>
         </Router>

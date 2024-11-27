@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import {useState} from 'react';
+import {useNavigate, useParams} from 'react-router-dom';
 import useRecipeStore from '../recipeStore';
 
 const EditRecipeForm = () => {
-    const { id } = useParams(); // Extract recipe ID from URL
+    const {id} = useParams(); // Extract recipe ID from URL
     const navigate = useNavigate(); // To navigate back after editing
-    const { recipes, updateRecipe } = useRecipeStore((state) => ({
+    const {recipes, updateRecipe} = useRecipeStore((state) => ({
         recipes: state.recipes,
         updateRecipe: state.updateRecipe,
     }));
@@ -24,7 +24,7 @@ const EditRecipeForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault(); // Prevent page reload
-        updateRecipe(recipeToEdit.id, { title, description }); // Update recipe in store
+        updateRecipe(recipeToEdit.id, {title, description}); // Update recipe in store
         navigate('/'); // Redirect to the home page after editing
     };
 

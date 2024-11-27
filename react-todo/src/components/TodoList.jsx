@@ -1,16 +1,16 @@
-import React, { useState } from "react";  // Add the React import here
+import React, {useState} from "react"; // Add the React import here
 import AddTodoForm from "./AddTodoForm";
 
 function TodoList() {
     const [todos, setTodos] = useState([
-        { id: 1, title: "Do the dishes", completed: false },
-        { id: 2, title: "Take out the trash", completed: false }
+        {id: 1, title: "Do the dishes", completed: false},
+        {id: 2, title: "Take out the trash", completed: false}
     ]);
 
     const toggleCompletion = (id) => {
         setTodos((prev) =>
             prev.map((todo) => {
-                return todo.id === id ? { ...todo, completed: !todo.completed } : todo;
+                return todo.id === id ? {...todo, completed: !todo.completed} : todo;
             })
         );
     };
@@ -21,14 +21,14 @@ function TodoList() {
 
     return (
         <div>
-            <AddTodoForm setTodos={setTodos} />
+            <AddTodoForm setTodos={setTodos}/>
             <h1>My todos:</h1>
             {todos.map((todo) => {
-                const { id, title, completed } = todo;
+                const {id, title, completed} = todo;
                 return (
-                    <div style={{ display: "flex", gap: ".4rem" }} key={id}>
+                    <div style={{display: "flex", gap: ".4rem"}} key={id}>
                         <label
-                            style={{ textDecoration: `${completed ? "line-through" : "none"}` }}
+                            style={{textDecoration: `${completed ? "line-through" : "none"}`}}
                         >
                             <input
                                 type="checkbox"

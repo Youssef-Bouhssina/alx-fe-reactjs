@@ -39,5 +39,4 @@
     },
     "testEnvironment": "jest-environment-jsdom"
   }
-
 }

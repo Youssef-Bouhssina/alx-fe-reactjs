@@ -1,15 +1,17 @@
 # React Router Advanced Project
 
-This project demonstrates advanced routing techniques in a React application using React Router v6. It showcases nested routes, protected routes with authentication, and dynamic routing.
+This project demonstrates advanced routing techniques in a React application using React Router v6. It showcases nested
+routes, protected routes with authentication, and dynamic routing.
 
 ## Features
 
 - Nested routes for Profile management
-- Protected routes requiring authentication  
+- Protected routes requiring authentication
 - Dynamic routing for blog posts
 - Basic authentication simulation
 
 ## Project Structure
+
 ```
 react-router-advanced/
 ├── src/
@@ -34,17 +36,20 @@ react-router-advanced/
 ## Installation
 
 1. Clone the repository:
+
 ```bash
 git clone <repository-url>
 cd react-router-advanced
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Run the development server:
+
 ```bash
 npm run dev
 ```
@@ -67,6 +72,7 @@ npm run dev
 ## Getting Started
 
 After starting the development server, you can:
+
 1. Visit the home page
 2. Try accessing the profile (will redirect to login)
 3. Log in using the login button
@@ -75,7 +81,9 @@ After starting the development server, you can:
 
 ## Authentication
 
-This project uses a simple localStorage-based authentication simulation. In a production environment, you would want to implement proper authentication.
+This project uses a simple localStorage-based authentication simulation. In a production environment, you would want to
+implement proper authentication.
+
 ```
 
 All React components are now organized in a single components folder for better maintainability and easier imports.

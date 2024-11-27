@@ -10,7 +10,7 @@ const useRecipeStore = create((set, get) => ({
         })),
 
     // Set recipes (replace the entire recipes array)
-    setRecipes: (recipes) => set({ recipes }),
+    setRecipes: (recipes) => set({recipes}),
 
     // Delete a recipe by ID
     deleteRecipe: (id) =>
@@ -22,21 +22,21 @@ const useRecipeStore = create((set, get) => ({
     updateRecipe: (id, updatedData) =>
         set((state) => ({
             recipes: state.recipes.map((recipe) =>
-                recipe.id === id ? { ...recipe, ...updatedData } : recipe
+                recipe.id === id ? {...recipe, ...updatedData} : recipe
             ),
         })),
 
     // Search term state and action
     searchTerm: '',
     setSearchTerm: (term) => {
-        set({ searchTerm: term });
-        set({ filteredRecipes: get().computeFilteredRecipes() }); // Update filtered recipes
+        set({searchTerm: term});
+        set({filteredRecipes: get().computeFilteredRecipes()}); // Update filtered recipes
     },
 
     // Filtered recipes
     filteredRecipes: [],
     computeFilteredRecipes: () => {
-        const { recipes, searchTerm } = get();
+        const {recipes, searchTerm} = get();
         return recipes.filter((recipe) =>
             recipe.title.toLowerCase().includes(searchTerm.toLowerCase())
         );
@@ -47,7 +47,7 @@ const useRecipeStore = create((set, get) => ({
     addFavorite: (recipeId) => {
         set((state) => {
             if (!state.favorites.includes(recipeId)) {
-                return { favorites: [...state.favorites, recipeId] };
+                return {favorites: [...state.favorites, recipeId]};
             }
             return state; // Avoid duplicates
         });
@@ -60,11 +60,11 @@ const useRecipeStore = create((set, get) => ({
     // Recommendations
     recommendations: [],
     generateRecommendations: () => {
-        const { recipes, favorites } = get();
+        const {recipes, favorites} = get();
         const recommended = recipes.filter(
             (recipe) => favorites.includes(recipe.id) && Math.random() > 0.5
         );
-        set({ recommendations: recommended });
+        set({recommendations: recommended});
     },
 }));
 
