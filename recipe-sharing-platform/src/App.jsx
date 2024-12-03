@@ -1,5 +1,4 @@
 import React from 'react';
-import RecipeApp from './components/HomePage.jsx';
 import HomePage from "./components/HomePage.jsx";
 
 const App = () => {
