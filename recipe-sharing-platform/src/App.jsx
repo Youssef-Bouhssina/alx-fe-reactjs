@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import RecipeApp from './components/HomePage.jsx';
+import HomePage from "./components/HomePage.jsx";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+    return (
+        <div className="flex flex-col min-h-screen">
+            {/* Header Section */}
+            <header className="bg-blue-600 dark:bg-blue-700 text-white py-4 shadow-lg">
+                <div className="container mx-auto px-4">
+                    <h1 className="text-3xl font-bold text-center">
+                        Recipe Collection
+                    </h1>
+                </div>
+            </header>
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+            {/* Main Content Section */}
+            <main className="flex-grow bg-gray-100 dark:bg-gray-900 py-8">
+                <div className="container mx-auto px-4">
+                    <HomePage />
+                </div>
+            </main>
 
-export default App
+            {/* Footer Section */}
+            <footer className="bg-gray-800 dark:bg-gray-700 text-gray-400 py-6">
+                <div className="container mx-auto px-4 text-center">
+                    <p className="text-sm">
+                        &copy; {new Date().getFullYear()} <span className="font-semibold text-white">Recipe App</span>. All Rights Reserved.
+                    </p>
+                    <p className="text-xs mt-2 text-gray-500">
+                        Made with ❤️ by the Recipe Team.
+                    </p>
+                </div>
+            </footer>
+        </div>
+    );
+};
+
+export default App;

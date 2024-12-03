@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const RecipeApp = () => {
+const HomePage = () => {
     const [recipes, setRecipes] = useState([]);
 
     useEffect(() => {
@@ -22,14 +22,14 @@ const RecipeApp = () => {
 
     return (
         <div className="container mx-auto px-4 py-6">
-            <h1 className="text-4xl font-extrabold text-center text-gray-800 mb-8">
+            <h1 className="text-4xl font-extrabold text-center text-gray-800 dark:text-gray-100 mb-8">
                 Delicious Recipes
             </h1>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {recipes.map((recipe) => (
                     <div
                         key={recipe.id}
-                        className="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:shadow-2xl hover:scale-105"
+                        className="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:shadow-2xl hover:scale-105"
                     >
                         <img
                             src={recipe.image}
@@ -37,16 +37,21 @@ const RecipeApp = () => {
                             className="w-full h-48 object-cover"
                         />
                         <div className="p-6">
-                            <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                            <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-2">
                                 {recipe.title}
                             </h2>
-                            <p className="text-gray-600 line-clamp-3">
+                            <p className="text-gray-600 dark:text-gray-400 line-clamp-3">
                                 {recipe.summary}
                             </p>
                         </div>
+                        <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 mt-4">
+                            View Recipe
+                        </button>
                     </div>
                 ))}
             </div>
         </div>
     );
 };
+
+export default HomePage;
