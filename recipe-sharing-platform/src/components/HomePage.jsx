@@ -50,5 +50,3 @@ const RecipeApp = () => {
         </div>
     );
 };
-
-export default RecipeApp;
