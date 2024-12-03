@@ -1,0 +1,21 @@
+
+[
+  {
+    "id": 1,
+    "title": "Pizza Margherita",
+    "summary": "A classic Italian pizza with a simple tomato sauce, mozzarella cheese, and fresh basil.",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 2,
+    "title": "Pad Thai",
+    "summary": "A stir-fried rice noodle dish with shrimp, vegetables, egg, and a flavorful tamarind sauce.",
+    "image": "https://via.placeholder.com/150"
+  },
+  {
+    "id": 3,
+    "title": "Chocolate Chip Cookies",
+    "summary": "Soft and chewy cookies packed with delicious chocolate chips.",
+    "image": "https://via.placeholder.com/150"
+  }
+]
