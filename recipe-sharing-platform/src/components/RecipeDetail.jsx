@@ -66,7 +66,7 @@ const RecipeDetail = () => {
                     </div>
                     <div>
                         <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-2">
-                            Cooking Instructions
+                            Instructions
                         </h2>
                         <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
                             Step 1: Do this. <br/>
