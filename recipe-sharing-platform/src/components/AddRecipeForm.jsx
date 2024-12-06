@@ -34,7 +34,7 @@ const AddRecipeForm = ({ onAddRecipe }) => {
             id: Date.now(),
             title,
             ingredients: ingredients.split('\n').map((item) => item.trim()).filter(Boolean),
-            steps: steps.split('\n').map((item) => item.trim()).filter(Boolean),
+            instructions: steps.split('\n').map((item) => item.trim()).filter(Boolean),
         };
 
         if (onAddRecipe) {
@@ -49,14 +49,13 @@ const AddRecipeForm = ({ onAddRecipe }) => {
 
     return (
         <div className="container mx-auto px-4 py-8">
-            <h1 className="text-3xl md:text-4xl font-extrabold text-center text-gray-800 mb-6">
+            <h1 className="text-4xl font-extrabold text-center text-gray-800 mb-6">
                 Add a New Recipe
             </h1>
             <form
                 onSubmit={handleSubmit}
                 className="bg-white dark:bg-gray-800 shadow-lg rounded-lg p-6 md:p-8 space-y-6"
             >
-                {/* Title Input */}
                 <div>
                     <label
                         htmlFor="title"
@@ -81,7 +80,6 @@ const AddRecipeForm = ({ onAddRecipe }) => {
                     )}
                 </div>
 
-                {/* Ingredients Input */}
                 <div>
                     <label
                         htmlFor="ingredients"
@@ -106,7 +104,6 @@ const AddRecipeForm = ({ onAddRecipe }) => {
                     )}
                 </div>
 
-                {/* Steps Input */}
                 <div>
                     <label
                         htmlFor="steps"
@@ -131,7 +128,6 @@ const AddRecipeForm = ({ onAddRecipe }) => {
                     )}
                 </div>
 
-                {/* Submit Button */}
                 <button
                     type="submit"
                     className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-md transition duration-200"

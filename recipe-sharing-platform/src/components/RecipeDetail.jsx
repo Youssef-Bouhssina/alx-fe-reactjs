@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 const RecipeDetail = () => {
-    const { id } = useParams(); // Get the recipe ID from the route parameters
+    const { id } = useParams();
     const [recipe, setRecipe] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -10,7 +10,7 @@ const RecipeDetail = () => {
     useEffect(() => {
         const fetchRecipe = async () => {
             try {
-                const response = await fetch('/recipe-sharing-platform/src/data.json');
+                const response = await fetch('/data.json');
                 if (!response.ok) {
                     throw new Error('Failed to fetch recipe data');
                 }
@@ -32,11 +32,19 @@ const RecipeDetail = () => {
     }, [id]);
 
     if (loading) {
-        return <p className="text-center text-lg">Loading recipe...</p>;
+        return (
+            <div className="flex justify-center items-center min-h-screen">
+                <p className="text-center text-lg">Loading recipe...</p>
+            </div>
+        );
     }
 
     if (error) {
-        return <p className="text-center text-red-500 text-lg">Error: {error}</p>;
+        return (
+            <div className="flex justify-center items-center min-h-screen">
+                <p className="text-center text-red-500 text-lg">Error: {error}</p>
+            </div>
+        );
     }
 
     return (
@@ -55,7 +63,6 @@ const RecipeDetail = () => {
                         {recipe.summary}
                     </p>
 
-                    {/* Ingredients Section */}
                     <div className="mb-6">
                         <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-2">
                             Ingredients
@@ -67,7 +74,6 @@ const RecipeDetail = () => {
                         </ul>
                     </div>
 
-                    {/* Instructions Section */}
                     <div>
                         <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-100 mb-2">
                             Instructions

@@ -1,6 +1,8 @@
-import RecipeApp from "./components/HomePage.jsx";
-import RecipeDetail from "./components/RecipeDetail.jsx";
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import HomePage from './components/HomePage';
+import RecipeDetail from './components/RecipeDetail';
+import AddRecipeForm from './components/AddRecipeForm';
 
 const App = () => {
     return (
@@ -19,8 +21,9 @@ const App = () => {
                 <main className="flex-grow bg-gray-100 dark:bg-gray-900 py-8">
                     <div className="container mx-auto px-4">
                         <Routes>
-                            <Route path="/" element={<RecipeApp/>}/>
-                            <Route path="/recipe-detail" element={<RecipeDetail/>}/>
+                            <Route path="/" element={<HomePage />} />
+                            <Route path="/recipe/:id" element={<RecipeDetail />} />
+                            <Route path="/add-recipe" element={<AddRecipeForm />} />
                         </Routes>
                     </div>
                 </main>
