@@ -1,0 +1,79 @@
+
+[
+  {
+    "id": 1,
+    "title": "Pizza Margherita",
+    "summary": "A classic Italian pizza with a simple tomato sauce, mozzarella cheese, and fresh basil.",
+    "image": "https://via.placeholder.com/150",
+    "ingredients": [
+      "2 cups all-purpose flour",
+      "1 packet dry yeast",
+      "1 cup warm water",
+      "1 tsp salt",
+      "1 cup tomato sauce",
+      "2 cups mozzarella cheese",
+      "Fresh basil leaves"
+    ],
+    "instructions": [
+      "Preheat the oven to 475°F (245°C).",
+      "Prepare the dough by mixing flour, yeast, water, and salt. Knead until smooth.",
+      "Roll out the dough and place it on a pizza pan.",
+      "Spread tomato sauce over the dough.",
+      "Add mozzarella cheese and fresh basil leaves on top.",
+      "Bake for 12-15 minutes or until the crust is golden brown."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Pad Thai",
+    "summary": "A stir-fried rice noodle dish with shrimp, vegetables, egg, and a flavorful tamarind sauce.",
+    "image": "https://via.placeholder.com/150",
+    "ingredients": [
+      "8 oz rice noodles",
+      "2 tbsp tamarind paste",
+      "3 tbsp fish sauce",
+      "2 tbsp sugar",
+      "1 cup shrimp",
+      "1 cup bean sprouts",
+      "2 eggs, beaten",
+      "2 tbsp vegetable oil",
+      "Chopped peanuts for garnish",
+      "Lime wedges for serving"
+    ],
+    "instructions": [
+      "Soak the rice noodles in warm water until softened, then drain.",
+      "Mix tamarind paste, fish sauce, and sugar in a bowl.",
+      "Heat oil in a pan and cook shrimp until pink.",
+      "Push shrimp to the side, add eggs, and scramble them.",
+      "Add noodles and tamarind sauce mixture to the pan. Stir well.",
+      "Toss in bean sprouts and cook for 1-2 minutes.",
+      "Serve hot, garnished with chopped peanuts and lime wedges."
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Chocolate Chip Cookies",
+    "summary": "Soft and chewy cookies packed with delicious chocolate chips.",
+    "image": "https://via.placeholder.com/150",
+    "ingredients": [
+      "1 cup butter, softened",
+      "1 cup white sugar",
+      "1 cup brown sugar",
+      "2 eggs",
+      "2 tsp vanilla extract",
+      "3 cups all-purpose flour",
+      "1 tsp baking soda",
+      "1/2 tsp salt",
+      "2 cups chocolate chips"
+    ],
+    "instructions": [
+      "Preheat the oven to 350°F (175°C).",
+      "Cream together butter, white sugar, and brown sugar.",
+      "Beat in eggs and vanilla extract.",
+      "In a separate bowl, mix flour, baking soda, and salt. Gradually blend into the wet ingredients.",
+      "Stir in chocolate chips.",
+      "Drop spoonfuls of dough onto a baking sheet.",
+      "Bake for 10-12 minutes or until edges are lightly browned."
+    ]
+  }
+]
