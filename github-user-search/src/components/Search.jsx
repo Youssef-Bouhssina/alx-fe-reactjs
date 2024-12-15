@@ -1,31 +1,27 @@
 import React, { useState } from 'react';
-import { fetchUserData, searchUsers } from '../services/githubService';
-import UserCard from './UserCard';
+import { fetchUserData } from '../services/githubService';
 
-const Search = () => {
+function Search() {
     const [username, setUsername] = useState('');
-    const [location, setLocation] = useState('');
-    const [minRepos, setMinRepos] = useState(0);
-    const [user, setUser] = useState(null);
-    const [users, setUsers] = useState([]);
+    const [userData, setUserData] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
+    const [error, setError] = useState(false);
 
-    const handleSearch = async (e) => {
+    const handleInputChange = (e) => {
+        setUsername(e.target.value);
+    };
+
+    const handleFormSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        setError(null);
+        setError(false);
+        setUserData(null);
 
         try {
-            const userData = await fetchUserData(username);
-            setUser(userData);
-
-            const searchResults = await searchUsers(username, location, minRepos);
-            setUsers(searchResults);
+            const data = await fetchUserData(username);
+            setUserData(data); // Store user data
         } catch (err) {
-            setError('Looks like we can\'t find the user');
-            setUser(null);
-            setUsers([]);
+            setError(true); // Handle errors
         } finally {
             setLoading(false);
         }
@@ -33,36 +29,15 @@ const Search = () => {
 
     return (
         <div className="max-w-xl mx-auto">
-            <form
-                onSubmit={handleSearch}
-                className="bg-white shadow-md rounded-lg p-6 mb-4"
-            >
+            <form onSubmit={handleFormSubmit} className="bg-white shadow-md rounded-lg p-6 mb-4">
                 <div className="mb-4">
                     <input
                         type="text"
                         value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        placeholder="GitHub Username"
+                        onChange={handleInputChange}
+                        placeholder="Enter GitHub username"
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                         required
-                    />
-                </div>
-                <div className="mb-4">
-                    <input
-                        type="text"
-                        value={location}
-                        onChange={(e) => setLocation(e.target.value)}
-                        placeholder="Location (optional)"
-                        className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    />
-                </div>
-                <div className="mb-4">
-                    <input
-                        type="number"
-                        value={minRepos}
-                        onChange={(e) => setMinRepos(Number(e.target.value))}
-                        placeholder="Min Repositories"
-                        className="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                 </div>
                 <button
@@ -73,33 +48,33 @@ const Search = () => {
                 </button>
             </form>
 
-            {loading && (
-                <div className="text-center text-gray-600">Loading...</div>
-            )}
-
+            {loading && <div className="text-center text-gray-600">Loading...</div>}
             {error && (
                 <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
-                    {error}
+                    Looks like we can't find the user
                 </div>
             )}
-
-            {user && (
-                <div>
-                    <h2 className="text-2xl font-bold mb-4">User Details</h2>
-                    <UserCard user={user} />
-                </div>
-            )}
-
-            {users.length > 0 && (
-                <div>
-                    <h2 className="text-2xl font-bold mb-4">Search Results</h2>
-                    {users.map(user => (
-                        <UserCard key={user.id} user={user} />
-                    ))}
+            {userData && (
+                <div className="text-center">
+                    <img
+                        src={userData.avatar_url}
+                        alt={`${userData.login} avatar`}
+                        className="mx-auto rounded-full"
+                        width={100}
+                    />
+                    <p className="mt-2 font-semibold">Name: {userData.name || 'N/A'}</p>
+                    <a
+                        href={userData.html_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-500 hover:underline"
+                    >
+                        View Profile
+                    </a>
                 </div>
             )}
         </div>
     );
-};
+}
 
 export default Search;
