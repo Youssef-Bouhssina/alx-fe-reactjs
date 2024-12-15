@@ -1,54 +1,29 @@
-import axios from 'axios';
+import axios from "axios";
 
-const GITHUB_API_BASE_URL = import.meta.env.VITE_GITHUB_API_BASE_URL || 'https://api.github.com';
+export async function fetchUserData({ username, location, minRepos, page }) {
+    const queries = [];
 
-export const githubService = {
-  async searchUsers(params) {
-    const { 
-      query, 
-      location = '', 
-      minRepositories = 0 
-    } = params;
-
-    let searchQuery = query;
-    if (location) {
-      searchQuery += ` location:${location}`;
+    if (username.trim().length) {
+        queries.push(username);
     }
-    if (minRepositories > 0) {
-      searchQuery += ` repos:>=${minRepositories}`;
+
+    if (location.trim().length) {
+        queries.push(`location:${location}`);
     }
+
+    if (minRepos.trim().length) {
+        queries.push(`repos:>${minRepos}`);
+    }
+
+    const queryString = queries.join(' ');
+
+    const url = `https://api.github.com/search/users?q=${encodeURIComponent(queryString)}&page=${page}&per_page=6`;
 
     try {
-      const response = await axios.get(`${GITHUB_API_BASE_URL}/search/users`, {
-        params: { 
-          q: searchQuery,
-          per_page: 10
-        }
-      });
-      return response.data;
+        const response = await axios.get(url);
+        return response.data;
     } catch (error) {
-      console.error('Error searching GitHub users:', error);
-      throw error;
+        console.error(error);
+        throw error;
     }
-  },
-
-  async getUserDetails(username) {
-    try {
-      const response = await axios.get(`${GITHUB_API_BASE_URL}/users/${username}`);
-      return response.data;
-    } catch (error) {
-      throw error;
-    }
-  },
-
-  async fetchUserData(username) {
-    // Adding the fetchUserData function as requested
-    try {
-      const response = await axios.get(`${GITHUB_API_BASE_URL}/users/${username}`);
-      return response.data;
-    } catch (error) {
-      console.error('Error fetching user data:', error);
-      throw error;
-    }
-  }
-};
+}
