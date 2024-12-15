@@ -12,10 +12,9 @@ function Search() {
   const [error, setError] = useState(null);
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
     setSearchParams(prev => ({
       ...prev,
-      [name]: value
+      [e.target.name]: e.target.value // Explicitly using e.target.value
     }));
   };
 
