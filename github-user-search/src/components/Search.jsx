@@ -127,7 +127,7 @@ function Search() {
 
       {!loading && searchResults.length === 0 && searchParams.query && (
         <div className="mt-4 text-center text-gray-500">
-          No users found matching your search criteria
+          Looks like we can't find the user
         </div>
       )}
     </div>
