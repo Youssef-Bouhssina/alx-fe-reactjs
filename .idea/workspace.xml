@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a85c78f-3df4-4ade-9bfe-5fb82f1b7b0d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/github-user-search/.env" beforeDir="false" afterPath="$PROJECT_DIR$/github-user-search/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/github-user-search/src/components/Search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/github-user-search/src/components/Search.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/github-user-search/src/components/UserCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/github-user-search/src/components/UserCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/github-user-search/src/services/githubService.js" beforeDir="false" afterPath="$PROJECT_DIR$/github-user-search/src/services/githubService.js" afterDir="false" />
-    </list>
+    <list default="true" id="1a85c78f-3df4-4ade-9bfe-5fb82f1b7b0d" name="Changes" comment="..." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,6 +49,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Node.js.postcss.config.js.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
@@ -92,11 +88,24 @@
       <updated>1732597321385</updated>
       <workItem from="1732597325951" duration="351000" />
       <workItem from="1734110588549" duration="27000" />
-      <workItem from="1734221897299" duration="3212000" />
+      <workItem from="1734221897299" duration="3640000" />
     </task>
+    <task id="LOCAL-00001" summary="...">
+      <option name="closed" value="true" />
+      <created>1734226554696</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1734226554696</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="..." />
+    <option name="LAST_COMMIT_MESSAGE" value="..." />
   </component>
 </project>
