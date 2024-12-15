@@ -2,22 +2,13 @@
 
 A React-based application that allows users to search for GitHub profiles and view detailed information about them.
 
-## Project Structure
-
-The project directory structure is as follows:
-
+# Project Structure
 ```
 github-user-search/
 │
-├── node_modules/
-├── public/
-│   └── vite.svg
-│
 ├── src/
-│   ├── assets/
 │   ├── components/
-│   │   ├── Search.jsx
-│   │   └── UserCard.jsx
+│   │   └── Search.jsx
 │   ├── services/
 │   │   └── githubService.js
 │   ├── App.jsx
@@ -29,8 +20,9 @@ github-user-search/
 ├── index.html
 ├── package.json
 ├── postcss.config.js
+├── README.md
 ├── tailwind.config.js
-└── vite.config.js
+└── vercel.json
 ```
 
 ## Features
