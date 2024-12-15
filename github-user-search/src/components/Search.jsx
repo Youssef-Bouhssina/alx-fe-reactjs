@@ -21,12 +21,6 @@ function Search() {
 
     try {
       const data = await fetchUserData(username);
-      if (
-        (location && !data.location?.toLowerCase().includes(location.toLowerCase())) ||
-        (minRepos && data.public_repos < parseInt(minRepos))
-      ) {
-        throw new Error('No matching results');
-      }
       setUserData(data);
     } catch (err) {
       setError(true);
@@ -89,7 +83,7 @@ function Search() {
       </form>
 
       {loading && <p className="mt-4 text-center text-gray-500">Loading...</p>}
-      {error && <p className="mt-4 text-center text-red-500">No matching results found</p>}
+      {error && <p className="mt-4 text-center text-red-500">Looks like we can't find the user</p>}
       {userData && (
         <div className="mt-6 p-4 border rounded-md shadow-md">
           <img
