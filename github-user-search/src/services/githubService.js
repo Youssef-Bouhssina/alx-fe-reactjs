@@ -39,5 +39,16 @@ export const githubService = {
     } catch (error) {
       throw error;
     }
+  },
+
+  async fetchUserData(username) {
+    // Adding the fetchUserData function as requested
+    try {
+      const response = await axios.get(`${GITHUB_API_BASE_URL}/users/${username}`);
+      return response.data;
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+      throw error;
+    }
   }
 };
